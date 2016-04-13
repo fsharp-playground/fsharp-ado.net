@@ -1,5 +1,5 @@
 
-#### Connection MySql using ADO.NET
+#### Connect MySql using ADO.NET
 
 ```fsharp
 #r "packages/MySql.Data/lib/net45/MySql.Data.dll"
