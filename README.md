@@ -1,7 +1,6 @@
-
 #### Connect MySql using ADO.NET
 
-- ต้อง Add reference `System.Data.dll` และ  `System.Configuration.dll`
+- ต้อง Add reference `System.Data.dll` และ `System.Configuration.dll`
 
 ```fsharp
 #r "packages/MySql.Data/lib/net45/MySql.Data.dll"
@@ -16,14 +15,12 @@ module MySqlExample =
         use conn = new MySqlConnection(connectionString)
         conn.Open()
 
-        let cmd = new MySqlCommand( "SELECT * FROM Customers", conn )
+        let cmd = new MySqlCommand( "SELECT * FROM Customers", conn)
         let reader = cmd.ExecuteReader()
 
         while reader.Read()
-          do System.Console.Write (reader.GetString "firstName" )
-             System.Console.Write ("\t")
-             System.Console.Write (reader.GetString "lastName" )
-             System.Console.Write ("\t")
-             System.Console.Write (reader.GetString "customerId")
+          do printf "%s\t" <| reader.GetString "firstName"
+             printf "%s\t" <| reader.GetString "lastName"
+             printf "%s\n" <| reader.GetString "customerId"
 MySqlExample.connect()
 ```
