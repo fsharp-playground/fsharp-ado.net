@@ -3,8 +3,6 @@
 #r "System.Configuration.dll";
 
 open MySql.Data.MySqlClient
-open System.Data
-open System
 
 module MySqlExample =
     let connect() =

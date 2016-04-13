@@ -1,14 +1,14 @@
 
 #### Connect MySql using ADO.NET
 
+- ต้อง Add reference `System.Data.dll` และ  `System.Configuration.dll`
+
 ```fsharp
 #r "packages/MySql.Data/lib/net45/MySql.Data.dll"
 #r "System.Data.dll"
 #r "System.Configuration.dll";
 
 open MySql.Data.MySqlClient
-open System.Data
-open System
 
 module MySqlExample =
     let connect() =
